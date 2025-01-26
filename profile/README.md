@@ -1,61 +1,75 @@
 # FIAP X
 
 ## FIAP - Software Architecture Hackaton - Fase 5
+
 Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Software` da FIAP como requisito para avaliação.
 
 ## Integrantes do Grupo
+
 - Getúlio Magela Silva - RM355427
 
 ## Apresentação em Vídeo
+
 - [Assistir no YouTube](link:TODO)
 
 ## Diagramas
 
-### Event Storming :[Ver no Miro 👁️](link):
-![Event Storming](../docs/resources/event-storming.png)
+### Event Storming :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614656328237&cot=10):
 
-### Arquitetura Cloud :[Ver no Miro 👁️](link):
-![Cloud Architecture](../docs/resources/cloud-architecture.png)
+![Event Storming](../resources/event-storming.png)
+
+### Arquitetura Cloud :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614649572419&cot=10):
+
+![Cloud Architecture](../resources/cloud-architecture.png)
 
 ## Serviços:
 
 ### Fiap X API
-TODO
+
+Serviço responsável por gerenciar as postagens de vídeos criando URLs assinadas para upload e a gestão do conteúdo como listagem e download.
 
 ### Fiap X Worker
-TODO
+
+Serviço responsável por realizar o processamento de imagens a partir de arquivos de vídeo.
 
 ### Fiap X Identity
-TODO
+
+Serviço de autenticação permitindo o cadastro, solicitações de acesso e verificação de tokens de acesso.
 
 ### Fiap X Notifications
-TODO
+
+Serviço responsável pelo envio de notificações de sucesso ou falha no processamento dos vídeos enviados.
 
 ## Repositórios da solução:
+
 - Provisionamento de infraestrutura de Kubernetes com terraform: [Ver repositório](link:TODO)
 - Provisionamento de infraestrutura de banco de dados MongoDB com terraform: [Ver repositório](link:TODO)
 - Serviço de mensageria RabbitMQ dentro do cluster Kubernetes: [Ver repositório](link:TODO)
-- Serviço FIAP X Identity: [Ver repositório](link:TODO)
-- Serviço FIAP X API: [Ver repositório](link:TODO)
-- Serviço FIAP X Worker: [Ver repositório](link:TODO)
-- Serviço FIAP X Notification: [Ver repositório](link:TODO)
+- Serviço FIAP X Identity: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-identity)
+- Serviço FIAP X API: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-api)
+- Serviço FIAP X Worker: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-worker)
+- Serviço FIAP X Notification: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-notifications)
 
 ## CICD e DevOps
+
 - Todos os repositórios estão com esteiras automatizadas para implantação.
 - Todos os repositórios possuem proteções na branch principal (main), requisitando Pull Request com duas aprovações e que todos os checks de pipe tenham passado antes de realizar o merge.
 
 ## OpenAPI - Swagger
-- Todos os serviços possuem Swagger disponibilizados na rota `/docs` que pode ser acessada com o serviço em execução.
-- O serviços FiapXApi e FiapXIdentity possuem endpoints mapeados além dos endpoints de verificação de saúde da aplicação e consulta de events pois são serviços com o integração por HTTP.
+
+- Todos os serviços possuem Swagger disponibilizados na rota `/docs` que pode ser acessada com o serviço em execução. Contudo apenas os serviços FiapXAPI e FiapXIdentity possuem integração por HTTP, tornando-os mais enriquecidos.
 
 ## Requisitos:
+
 ### Requisitos Funcionais:
+
 - Autenticação
 - Upload de arquivos de vídeo
 - Download de arquivos
 - Notificações de processamento
 
 ### Não Funcionais:
+
 - Infraestrutura provisionada por esteiras automatizadas
 - Ambiente em núvem - Aws
 - Resiliencia
@@ -64,37 +78,55 @@ TODO
 - Disposição de Microserviços
 
 ## Evidências:
-### Fiap X API
-#### Pipeline
-TODO
-#### Unit Tests
-TODO
-#### Integration Testes
-TODO
 
+### Fiap X API
+
+#### Pipeline
+![Event Storming](../resources/evidence/fiap-x-api-pipeline.png)
+
+#### Unit Tests
+
+![Event Storming](../resources/evidence/fiap-x-api-unit-test.png)
+
+#### Integration Testes
+
+![Event Storming](../resources/evidence/fiap-x-api-integration-test.png)
 
 ### Fiap X Worker
-#### Pipeline
-TODO
-#### Unit Tests
-TODO
-#### Integration Testes
-TODO
 
+#### Pipeline
+![Event Storming](../resources/evidence/fiap-x-worker-pipeline.png)
+
+#### Unit Tests
+
+![Event Storming](../resources/evidence/fiap-x-worker-unit-test.png)
+
+#### Integration Testes
+
+![Event Storming](../resources/evidence/fiap-x-worker-integration-test.png)
 
 ### Fiap X Identity
-#### Pipeline
-TODO
-#### Unit Tests
-TODO
-#### Integration Testes
-TODO
 
+#### Pipeline
+![Event Storming](../resources/evidence/fiap-x-identity-pipeline.png)
+
+#### Unit Tests
+
+![Event Storming](../resources/evidence/fiap-x-identity-unit-test.png)
+
+#### Integration Testes
+
+![Event Storming](../resources/evidence/fiap-x-identity-integration-test.png)
 
 ### Fiap X Notifications
+
 #### Pipeline
-TODO
+![Event Storming](../resources/evidence/fiap-x-notifications-pipeline.png)
+
 #### Unit Tests
-TODO
+
+![Event Storming](../resources/evidence/fiap-x-notifications-unit-test.png)
+
 #### Integration Testes
-TODO
+
+![Event Storming](../resources/evidence/fiap-x-notifications-integration-test.png)
