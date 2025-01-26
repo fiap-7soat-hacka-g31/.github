@@ -42,9 +42,10 @@ Serviço responsável pelo envio de notificações de sucesso ou falha no proces
 
 ## Repositórios da solução:
 
-- Provisionamento de infraestrutura de Kubernetes com terraform: [Ver repositório](link:TODO)
-- Provisionamento de infraestrutura de banco de dados MongoDB com terraform: [Ver repositório](link:TODO)
-- Serviço de mensageria RabbitMQ dentro do cluster Kubernetes: [Ver repositório](link:TODO)
+- Provisionamento de infraestrutura de banco de dados MongoDB com terraform: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-mongodb)
+- Provisionamento de infraestrutura de Kubernetes com terraform: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-k8s)
+- Provisionamento de infraestrutura de APIGateway com terraform: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-gateway)
+- Serviço de mensageria RabbitMQ dentro do cluster Kubernetes: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-rabbitmq)
 - Serviço FIAP X Identity: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-identity)
 - Serviço FIAP X API: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-api)
 - Serviço FIAP X Worker: [Ver repositório](https://github.com/fiap-7soat-hacka-g31/soat7-hacka-fiap-x-worker)
