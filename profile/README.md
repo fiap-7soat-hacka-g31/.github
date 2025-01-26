@@ -5,8 +5,11 @@
 Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Software` da FIAP como requisito para avaliação.
 
 ## Integrantes do Grupo
-
-- Getúlio Magela Silva - RM355427
+- Julio Augusto Silva (RM355432)
+- Lucas Henrique de Oliveira Silva (RM354904)
+- Getúlio Magela Silva (RM355427)
+- Lucas Rego Lima (RM356101)
+- Lilian Rosario de Jesus (RM355928)
 
 ## Apresentação em Vídeo
 
