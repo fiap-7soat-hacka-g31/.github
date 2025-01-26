@@ -45,7 +45,8 @@ TODO
 - Todos os repositórios possuem proteções na branch principal (main), requisitando Pull Request com duas aprovações e que todos os checks de pipe tenham passado antes de realizar o merge.
 
 ## OpenAPI - Swagger
-- O serviços FiapXApi e FiapXIdentity possuem disponíveis na rota `/docs` com o serviço em execução.
+- Todos os serviços possuem Swagger disponibilizados na rota `/docs` que pode ser acessada com o serviço em execução.
+- O serviços FiapXApi e FiapXIdentity possuem endpoints mapeados além dos endpoints de verificação de saúde da aplicação e consulta de events pois são serviços com o integração por HTTP.
 
 ## Requisitos:
 ### Requisitos Funcionais:
