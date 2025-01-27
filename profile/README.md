@@ -5,6 +5,7 @@
 Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Software` da FIAP como requisito para avaliação.
 
 ## Integrantes do Grupo
+
 - Julio Augusto Silva (RM355432)
 - Lucas Henrique de Oliveira Silva (RM354904)
 - Getúlio Magela Silva (RM355427)
@@ -13,7 +14,10 @@ Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Sof
 
 ## Apresentação em Vídeo
 
-- [Assistir no YouTube](link:TODO)
+- [Assistir no YouTube](https://youtu.be/rOLPwBB9Reg)
+
+## Problemática a ser solucionada
+A FIAP X precisa de uma plataforma onde os usuários possam realizar autenticação e postagens de vídeos que serão processados a fim de extrair uma série de imagens e disponibilizar um arquivo .zip para download. Os usuários devem ser notificados por email quando o processamento for concluído.
 
 ## Diagramas
 
@@ -21,7 +25,7 @@ Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Sof
 
 ![Event Storming](../resources/event-storming.png)
 
-### Arquitetura Cloud :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614649572419&cot=10):
+### Arquitetura Cloud :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614731168004&cot=10):
 
 ![Cloud Architecture](../resources/cloud-architecture.png)
 
@@ -76,17 +80,22 @@ Todos os serviços possuem Swagger disponibilizados na rota `/docs` que pode ser
 Os arquivos também foram exportados para a pasta `/resources/swagger` e podem ser carregados no site `editor.swagger.io`
 
 ### API
-![Fiap X API](../resources/evidence/fiap-x-api-swagger-endpoints.png)
 
+![Fiap X API](../resources/evidence/fiap-x-api-swagger-endpoints.png)
 ![Fiap X API](../resources/evidence/fiap-x-api-swagger-models.png)
 
-
 ### Identity
+
 ![Fiap X Identity](../resources/evidence/fiap-x-identity-swagger-endpoints.png)
 ![Fiap X Identity](../resources/evidence/fiap-x-identity-swagger-models.png)
 
+## Postman
+
+O postman também é uma ferramenta de trabalho muito prática para o desenvolvimento e a collection e environment para atuação no serviço está disponível em `/resources/postman`
+
 ## Data Engineering
-Como banco de dados foi escolhido a utilização do MongoDB por ser um banco bastante flexível e escalável garantindo assim a continuidade dos serviços. 
+
+Como banco de dados foi escolhido a utilização do MongoDB por ser um banco bastante flexível e escalável garantindo assim a continuidade dos serviços.
 Para garantir o isolamento entre as entidades de cada serviço foi realizada a criação de um banco de dados para cada microserviço, garantindo assim o isolamento da persistência de domínio de cada serviço.
 
 ## Requisitos:
