@@ -29,19 +29,21 @@ Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Sof
 
 ### Fiap X API
 
-Serviço responsável por gerenciar as postagens de vídeos criando URLs assinadas para upload e a gestão do conteúdo como listagem e download.
+Serviço responsável por gerenciar as postagens de vídeos criando URLs assinadas para upload e a gestão do conteúdo como listagem e download. O serviço realiza integração via HTTP com o serviço de identidade para validação de Tokens de acesso. A integração dos usuários da plataforma são feitas majoritariamente através deste serviço. Possui dependência com S3, RabbitMQ e MongoDB.
 
 ### Fiap X Worker
 
-Serviço responsável por realizar o processamento de imagens a partir de arquivos de vídeo.
+Serviço responsável por realizar o processamento dos vídeos extraindo snapshots a cada período que foi previamente configurado pelo usuário na criação da postagem. Este serviço é executado totalmente em background sem que os usuários tenham acesso diretamente. Por ser um serviço com bastante infra-estrutura para garantir boa qualidade os testes de integração tem maior intensidade do que testes de unidade que focam apenas no fluxo de trabalho. Possui dependência com S3 e RabbitMQ.
+
+**OBS: Visando economizar os créditos disponíveis no AWS Academy, foi utilizado uma instancia T3.Small para o cluster EKS. Num ambiente real seria utilizado uma instancia com maior poder computacional e garantindo a capacidade de processamento de vídeos maiores**
 
 ### Fiap X Identity
 
-Serviço de autenticação permitindo o cadastro, solicitações de acesso e verificação de tokens de acesso.
+Serviço de autenticação com funcionalidades de cadastro, solicitações de acesso e verificação de tokens de acesso. O serviço trabalha com criptografia para garantir a segurança dos usuários. Possui dependência com RabbitMQ e MongoDB.
 
 ### Fiap X Notifications
 
-Serviço responsável pelo envio de notificações de sucesso ou falha no processamento dos vídeos enviados.
+Serviço responsável pelo envio de notificações de sucesso ou falha no processamento dos vídeos. Este serviço é bastante simple e abstrai as complexidades da integração com o serviço externo. Possui dependências com RabbitMQ, MongoDB e o MailerSend.
 
 ## Repositórios da solução:
 
@@ -86,6 +88,7 @@ Serviço responsável pelo envio de notificações de sucesso ou falha no proces
 ### Fiap X API
 
 #### Pipeline
+
 ![Event Storming](../resources/evidence/fiap-x-api-pipeline.png)
 
 #### Unit Tests
@@ -99,6 +102,7 @@ Serviço responsável pelo envio de notificações de sucesso ou falha no proces
 ### Fiap X Worker
 
 #### Pipeline
+
 ![Event Storming](../resources/evidence/fiap-x-worker-pipeline.png)
 
 #### Unit Tests
@@ -112,6 +116,7 @@ Serviço responsável pelo envio de notificações de sucesso ou falha no proces
 ### Fiap X Identity
 
 #### Pipeline
+
 ![Event Storming](../resources/evidence/fiap-x-identity-pipeline.png)
 
 #### Unit Tests
@@ -125,6 +130,7 @@ Serviço responsável pelo envio de notificações de sucesso ou falha no proces
 ### Fiap X Notifications
 
 #### Pipeline
+
 ![Event Storming](../resources/evidence/fiap-x-notifications-pipeline.png)
 
 #### Unit Tests
