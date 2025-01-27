@@ -59,11 +59,35 @@ Serviço responsável pelo envio de notificações de sucesso ou falha no proces
 ## CICD e DevOps
 
 - Todos os repositórios estão com esteiras automatizadas para implantação.
-- Todos os repositórios possuem proteções na branch principal (main), requisitando Pull Request com duas aprovações e que todos os checks de pipe tenham passado antes de realizar o merge.
+- Todos os repositórios possuem proteções na branch principal (main), requisitando Pull Request com duas aprovações e que as três primeiras etapas da pipeline estejam marcadas com sucesso garantindo a qualidade da entrega e segurança do projeto.
+- A esteiras forma padronizadas em 5 etapas:
+- - Build & Analyze
+- - Unit Tests
+- - Integration & Acceptance Tests
+- - Containerize
+- - Deploy
+
+**No caso dos serviços worker e notifications os testes de aceitação não são reais, estão lá apenas para garantir que a estrutura esteja preparada para a criação futura.**
 
 ## OpenAPI - Swagger
 
-- Todos os serviços possuem Swagger disponibilizados na rota `/docs` que pode ser acessada com o serviço em execução. Contudo apenas os serviços FiapXAPI e FiapXIdentity possuem integração por HTTP, tornando-os mais enriquecidos.
+Todos os serviços possuem Swagger disponibilizados na rota `/docs` que pode ser acessada com o serviço em execução. Contudo apenas os serviços API e Identity possuem integração por HTTP com seus mapeamentos no swagger.
+
+Os arquivos também foram exportados para a pasta `/resources/swagger` e podem ser carregados no site `editor.swagger.io`
+
+### API
+![Fiap X API](../resources/evidence/fiap-x-api-swagger-endpoints.png)
+
+![Fiap X API](../resources/evidence/fiap-x-api-swagger-models.png)
+
+
+### Identity
+![Fiap X Identity](../resources/evidence/fiap-x-identity-swagger-endpoints.png)
+![Fiap X Identity](../resources/evidence/fiap-x-identity-swagger-models.png)
+
+## Data Engineering
+Como banco de dados foi escolhido a utilização do MongoDB por ser um banco bastante flexível e escalável garantindo assim a continuidade dos serviços. 
+Para garantir o isolamento entre as entidades de cada serviço foi realizada a criação de um banco de dados para cada microserviço, garantindo assim o isolamento da persistência de domínio de cada serviço.
 
 ## Requisitos:
 
