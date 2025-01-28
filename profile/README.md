@@ -91,7 +91,7 @@ Os arquivos também foram exportados para a pasta `/resources/swagger` e podem s
 
 ## Postman
 
-O postman também é uma ferramenta de trabalho muito prática para o desenvolvimento e a collection e environment para atuação no serviço está disponível em `/resources/postman`
+O postman também é uma ferramenta de trabalho muito prática para o desenvolvimento e a collection e environment para atuação no serviço está disponível em https://github.com/fiap-7soat-hacka-g31/.github/tree/main/resources/postman
 
 ## Data Engineering
 
