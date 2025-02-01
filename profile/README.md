@@ -173,3 +173,13 @@ Para garantir o isolamento entre as entidades de cada serviço foi realizada a c
 #### Integration Testes
 
 ![Event Storming](../resources/evidence/fiap-x-notifications-integration-test.png)
+
+
+### Notificações Enviadas por Email:
+
+#### Sucesso
+![Notificação de Sucesso](../resources/evidence/fiap-x-notifications-template-success.png)
+
+
+#### Falha
+![Notificação de falha](../resources/evidence/fiap-x-notifications-template-failure.png)
