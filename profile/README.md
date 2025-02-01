@@ -16,18 +16,35 @@ Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Sof
 
 - [Assistir no YouTube](https://youtu.be/mGyG6CdXBoY)
 
-## Problemática a ser solucionada
-A FIAP X precisa de uma plataforma onde os usuários possam realizar autenticação e postagens de vídeos que serão processados a fim de extrair uma série de imagens e disponibilizar um arquivo .zip para download. Os usuários devem ser notificados por email quando o processamento for concluído.
+## O Desafio
 
-## Diagramas
+A FIAP X precisa de uma plataforma onde os usuários possam realizar autenticação e postagens de vídeos que serão processados para extrair uma série de imagens que serão disponibilizadas em um arquivo .zip para download. Os usuários devem ser notificados por email quando o processamento for concluído.
+
+## Solução
 
 ### Event Storming :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614656328237&cot=10):
 
 ![Event Storming](../resources/event-storming.png)
 
+A jornada do usuário começa com a autenticação na plataforma, de posse de um token de acesso o usuário consegue acessar as postagens que já fez ou realizar novas postagens.
+
+Uma nova postagem ocorre em duas fazes, primeiro é realizado a postagem dos metadados em que é devolvido uma URL assinada, então é utilizado a URL assinada para a subida do arquivo binário contendo o vídeo.
+
+Após a subida do vídeo o arquivo é processado por um serviço que terá uma saída de sucesso ou de falha e então o usuário recebe um email contendo as informações do processamento. Em caso de sucesso, o email também possui um link para download direto e em caso de falha o motivo da rejeição. O usuário também pode realizar os downloads solicitando as URLs assinadas para download via API.
+
 ### Arquitetura Cloud :[Ver no Miro 👁️](https://miro.com/app/board/o9J_lHsdpmE=/?moveToWidget=3458764614731168004&cot=10):
 
 ![Cloud Architecture](../resources/cloud-architecture.png)
+
+Foi utilizado um cluster gerenciado utilizando o serviço EKS da AWS com um único nó configurado em uma instância T3.Medium. Esta configuração é suficiente para a demonstração de todos os recursos do projeto.
+
+- Todos os serviços estão configurados no kubernetes com:
+- - Deployment
+- - HPA - Horizontal Pod Autoscaler
+- - Service
+- - Secrets
+
+Para a acessar os serviços externamente ao cluster Kubernetes foi realizado o mapeamento das rotas de acesso público em um API Gateway conectado a um VPC Link na Aws. Os usuários também conseguem realizar acesso direto ao S3 para download e upload de arquivos através de URLs assinadas que são criadas pelas aplicações.
 
 ## Serviços:
 
@@ -38,8 +55,6 @@ Serviço responsável por gerenciar as postagens de vídeos criando URLs assinad
 ### Fiap X Worker
 
 Serviço responsável por realizar o processamento dos vídeos extraindo snapshots a cada período que foi previamente configurado pelo usuário na criação da postagem. Este serviço é executado totalmente em background sem que os usuários tenham acesso diretamente. Por ser um serviço com bastante infra-estrutura para garantir boa qualidade os testes de integração tem maior intensidade do que testes de unidade que focam apenas no fluxo de trabalho. Possui dependência com S3 e RabbitMQ.
-
-**OBS: Visando economizar os créditos disponíveis no AWS Academy, foi utilizado uma instancia T3.Medium para o cluster EKS, esta instância é suficiente para realizar processamento de vídeos de até 250Mb sem degradação do ambiente. Para processamento de vídeos maiores é necessário realizar a reconfiguração de acordo com a necessidade.**
 
 ### Fiap X Identity
 
@@ -174,12 +189,12 @@ Para garantir o isolamento entre as entidades de cada serviço foi realizada a c
 
 ![Event Storming](../resources/evidence/fiap-x-notifications-integration-test.png)
 
-
 ### Notificações Enviadas por Email:
 
 #### Sucesso
+
 ![Notificação de Sucesso](../resources/evidence/fiap-x-notifications-template-success.png)
 
-
 #### Falha
+
 ![Notificação de falha](../resources/evidence/fiap-x-notifications-template-failure.png)
