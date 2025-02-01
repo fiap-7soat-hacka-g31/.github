@@ -14,7 +14,7 @@ Este projeto foi desenvolvido durante a `Fase V` do curso de `Arquitetura de Sof
 
 ## Apresentação em Vídeo
 
-- [Assistir no YouTube](https://youtu.be/rOLPwBB9Reg)
+- [Assistir no YouTube](https://youtu.be/mGyG6CdXBoY)
 
 ## Problemática a ser solucionada
 A FIAP X precisa de uma plataforma onde os usuários possam realizar autenticação e postagens de vídeos que serão processados a fim de extrair uma série de imagens e disponibilizar um arquivo .zip para download. Os usuários devem ser notificados por email quando o processamento for concluído.
