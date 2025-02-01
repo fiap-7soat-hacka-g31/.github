@@ -39,7 +39,7 @@ Serviço responsável por gerenciar as postagens de vídeos criando URLs assinad
 
 Serviço responsável por realizar o processamento dos vídeos extraindo snapshots a cada período que foi previamente configurado pelo usuário na criação da postagem. Este serviço é executado totalmente em background sem que os usuários tenham acesso diretamente. Por ser um serviço com bastante infra-estrutura para garantir boa qualidade os testes de integração tem maior intensidade do que testes de unidade que focam apenas no fluxo de trabalho. Possui dependência com S3 e RabbitMQ.
 
-**OBS: Visando economizar os créditos disponíveis no AWS Academy, foi utilizado uma instancia T3.Small para o cluster EKS. Num ambiente real seria utilizado uma instancia com maior poder computacional e garantindo a capacidade de processamento de vídeos maiores**
+**OBS: Visando economizar os créditos disponíveis no AWS Academy, foi utilizado uma instancia T3.Medium para o cluster EKS, esta instância é suficiente para realizar processamento de vídeos de até 250Mb sem degradação do ambiente. Para processamento de vídeos maiores é necessário realizar a reconfiguração de acordo com a necessidade.**
 
 ### Fiap X Identity
 
